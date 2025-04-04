@@ -28,10 +28,10 @@ extension MockData{
             MockData(title: "15,257,990원", name: "bank10", bankName: "투자 모아보기")
         ],
         [
-            MockData(title: "823,643원", name: "bank11", bankName: "WINGO통장")
+            MockData(title: "823,643원", name: "bank11", bankName: "3월에 쓴 돈")
         ],
         [
-            MockData(title: "823,643원", name: "bank12", bankName: "WINGO통장")
+            MockData(title: "내 신용점수", name: "bank12", bankName: "내 신용점수")
         ]
     ]
 }
