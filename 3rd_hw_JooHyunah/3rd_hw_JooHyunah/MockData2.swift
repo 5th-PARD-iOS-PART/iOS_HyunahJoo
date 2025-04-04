@@ -15,6 +15,9 @@ extension MockData2{
             MockData2(title: "카카오 택시_0", name: "store1", time: "11:13", amount: "-6,200원", total: "38,841원"),
             MockData2(title: "카카오 택시 선승인", name: "store1", time: "11:00", amount: "+6,900원", total: "45,041원"),
             MockData2(title: "카카오 택시 선승인", name: "store1", time: "11:00", amount: "-6,900원", total: "45,041원"),
+        ],
+    
+        [
             MockData2(title: "플렉스 PC방", name: "store2", time: "22:44", amount: "-5,500원", total: "45,041원"),
             MockData2(title: "플렉스 PC방", name: "store2", time: "21:35", amount: "-5,000원", total: "50,541원"),
             MockData2(title: "씨유한동대오석관점", name: "store3", time: "16:17", amount: "-2,000원", total: "55,541원"),

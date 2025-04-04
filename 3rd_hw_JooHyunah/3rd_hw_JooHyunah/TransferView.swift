@@ -9,28 +9,23 @@ struct TransferView : View {
     var body: some View {
         
         List {
+            Section {
+               AccountSummaryView()
+                   .listRowInsets(EdgeInsets())
+           }
+            
             ForEach(0..<MockData2.modeling.count, id:\.self){ sectionIndex in
                 
                 Section{
-                  //  Group{
-//                        if sectionIndex == 0 {
-//                            Text("치아는 뼈일까?")
-//                            
-//                        } else if sectionIndex == 1 {
-//                            Text("토스뱅크")
-//                            
-//                        } else {
-                            ForEach(MockData2.modeling[sectionIndex]) { item in
-                                DemoRow2(data : item)
-                                
-                            //}
-                        }
-                  //  }
+                    ForEach(MockData2.modeling[sectionIndex]) { item in
+                        DemoRow2(data : item)
+                    }
                 }
                 
             }
         } //list
-        .listStyle(DefaultListStyle())
+        .listStyle(PlainListStyle())
+        .background(Color(.systemGroupedBackground))
     }
 }
 #Preview {
