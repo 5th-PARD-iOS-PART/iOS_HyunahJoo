@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     
     var body: some View {
-        //NavigationStack{
             TabView() {
                 HomeTab()
                     .tabItem{
@@ -47,7 +46,6 @@ struct ContentView: View {
                     }
                     .tag(4)
             } // TabView
-       // } // NavigationStack
     }
 }
 

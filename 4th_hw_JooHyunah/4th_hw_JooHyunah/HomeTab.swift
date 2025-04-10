@@ -8,32 +8,37 @@
 import SwiftUI
 
 struct HomeTab : View {
+    @State private var path = NavigationPath()
+    
     var body: some View {
-        List {
-            ForEach(0..<MockData.modeling.count, id:\.self){ sectionIndex in
-                
+        NavigationStack(path : $path){
+            List {
                 Section{
-                    Group{
-                        if sectionIndex == 0 {
-                            Text("치아는 뼈일까?")
-                            
-                        } else if sectionIndex == 1 {
-                            Text("토스뱅크")
-                            
-                        } else {
-                            ForEach(MockData.modeling[sectionIndex]) { item in
-                                DemoRow1(data : item)
-                                
-                            }
+                    Text("치아는 뼈일까?")
+                }
+                Section{
+                    Text("토스뱅크")
+                }
+                ForEach(0..<MockData.modeling.count, id:\.self){ index in
+                    Section{
+                        ForEach(MockData.modeling[index]){ item in
+                            DemoRow1(data : item, path: $path)
                         }
                     }
                 }
-                
+            }.navigationDestination(for: String.self){ value in
+                switch value {
+                case "Transfer" : TransferView(path : $path)
+                case "Send" : AccountSelectingView(path : $path)
+                case "Amount": AmountSelectingView(path : $path)
+                case "Confirm":  MoneyMovingView(path: $path)
+                default : Text("잘못된 목적지")
+                }
+               
             }
-        } //list
-        
+        }
+    
     }
-      
 }
 #Preview {
     HomeTab()

@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct AccountSummaryView: View {
+    @Binding var path: NavigationPath
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             
@@ -46,7 +48,8 @@ struct AccountSummaryView: View {
                 .foregroundColor(.blue)
                 
                 Button("보내기") {
-                 
+                    print("✅ 보내기 버튼 눌림!")
+                    path.append("Send")
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -85,5 +88,5 @@ struct AccountSummaryView: View {
 }
 
 #Preview {
-    AccountSummaryView()
+    AccountSummaryView(path: .constant(NavigationPath()))
 }

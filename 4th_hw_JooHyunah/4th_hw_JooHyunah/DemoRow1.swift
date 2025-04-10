@@ -9,9 +9,8 @@ import SwiftUI
 
 struct DemoRow1: View {
     var data: MockData
-    @State private var isActive = false
+    @Binding var path: NavigationPath
 
-    
     var body: some View {
         HStack {
             Image(data.name)
@@ -31,13 +30,9 @@ struct DemoRow1: View {
             .layoutPriority(1)
             .frame(maxWidth: .infinity, alignment: .leading)
             
-            NavigationLink(destination: TransferView(), isActive: $isActive){
-                EmptyView()
-            }
-            .hidden()
             
             Button("송금"){
-                isActive = true
+                path.append("Transfer")
             }
             .font(.subheadline)
             .padding(.horizontal, 10)
@@ -55,5 +50,5 @@ struct DemoRow1: View {
 }
 
 #Preview {
-    DemoRow1(data:MockData(title: "gg", name: "symbol1", bankName: "경상북도 포항시 소재에 있는 하나은행"))
+    DemoRow1(data:MockData(title: "gg", name: "symbol1", bankName: "경상북도 포항시 소재에 있는 하나은행"),path: .constant(NavigationPath()))
 }

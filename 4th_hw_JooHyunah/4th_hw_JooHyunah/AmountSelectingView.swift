@@ -1,5 +1,5 @@
 //
-//  MoneyMovingView.swift
+//  AmountSelecitngView.swift
 //  4rd_hw_JooHyunah
 //
 //  Created by 주현아 on 4/9/25.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct MoneyMovingView: View {
+struct AmountSelectingView: View {
     @Binding var path: NavigationPath
     
     var body: some View{
-        Text("금액 실제 송금하는 뷰")
+        Text("금액 선택 뷰")
     }
 }
 
 #Preview {
-    MoneyMovingView(path: .constant(NavigationPath()))
+    AmountSelectingView(path: .constant(NavigationPath()))
 }
