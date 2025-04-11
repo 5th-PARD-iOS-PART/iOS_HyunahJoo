@@ -28,13 +28,22 @@ struct HomeTab : View {
                 }
             }.navigationDestination(for: String.self){ value in
                 switch value {
-                case "Transfer" : TransferView(path : $path)
-                case "Send" : AccountSelectingView(path : $path)
-                case "Amount": AmountSelectingView(path : $path)
-                case "Confirm":  MoneyMovingView(path: $path)
-                default : Text("잘못된 목적지")
+                    case "Transfer" : TransferView(path : $path)
+                    case "Send" : AccountSelectingView(path : $path, model: AccountModel())
+                    case "Confirm":  MoneyMovingView(path: $path, selectedAccount: AccountData(bank: "", name: "", account: "", star: ""), amountText: .constant("26656"))
+                    default : Text("잘못된 목적지")
                 }
                
+            }
+            .navigationDestination(for: AccountData.self){ account in
+                AmountSelectingView(path : $path, selectedAccount: account)
+            }
+            .navigationDestination(for: ConfirmInfo.self) { info in
+                MoneyMovingView(
+                        path: $path,
+                        selectedAccount: info.account,
+                        amountText: .constant(info.amount)
+                    )
             }
         }
     

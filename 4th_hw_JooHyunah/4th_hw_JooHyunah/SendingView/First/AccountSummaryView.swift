@@ -48,7 +48,6 @@ struct AccountSummaryView: View {
                 .foregroundColor(.blue)
                 
                 Button("보내기") {
-                    print("✅ 보내기 버튼 눌림!")
                     path.append("Send")
                 }
                 .frame(maxWidth: .infinity)
