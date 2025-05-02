@@ -4,8 +4,10 @@
 MVVM 패턴을 이용해 Model, View, ViewModel을 구분하여 구현<br>
 
 ### 실행화면
-'모두' 버튼 클릭 -> In_AllTab()<br>
+'모두' 버튼 클릭 -> In_AllTab()
+<br>
   <img src="Captures/capture1.png" width="350"/>
+<br>
   <img src="Captures/capture2.png" width="350"/>
 <br>
 
