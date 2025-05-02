@@ -2,6 +2,8 @@
 import SwiftUI
 
 struct ThirdTab: View {
+    @State var viewModel = ProductViewModel()
+    
     @State private var selectedIndex: Int = 0
     let tabs = ["모두", "특가", "식품", "의류", "전자제품", "뷰티"]
 
@@ -12,7 +14,7 @@ struct ThirdTab: View {
                         .font(.title)
                         .bold()
                     Spacer()
-                }
+            }
             .padding(.leading, 30)
                 
             HStack(spacing: 0) {
@@ -31,17 +33,17 @@ struct ThirdTab: View {
             .frame(maxWidth: .infinity)
 
             if selectedIndex == 0 {
-                In_AllTab()
+                In_AllTab(viewModel: viewModel)
             } else if selectedIndex == 1 {
-                In_DealsTab()
+                In_DealsTab(viewModel: viewModel)
             } else if selectedIndex == 2 {
-                In_FoodTab()
+                In_FoodTab(viewModel: viewModel)
             } else if selectedIndex == 3 {
-                In_ClothingTab()
+                In_ClothingTab(viewModel: viewModel)
             } else if selectedIndex == 4 {
-                In_ElectronicTab()
+                In_ElectronicTab(viewModel: viewModel)
             } else {
-                In_BeautyTab()
+                In_BeautyTab(viewModel: viewModel)
             }
 
             Spacer()
