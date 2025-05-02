@@ -6,8 +6,8 @@ MVVM 패턴을 이용해 Model, View, ViewModel을 구분하여 구현<br>
 ### 실행화면
 '모두' 버튼 클릭 -> In_AllTab()<br>
 <div style="display: flex; gap: 12px;">
-  <img src="Captures/capture1.png" width="250"/>
-  <img src="Captures/capture2.png" width="250"/>
+  <img src="Captures/capture1.png"/>
+  <img src="Captures/capture2.png"/>
 </div>
 <br>
 
