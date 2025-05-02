@@ -11,15 +11,25 @@ struct In_AllTab: View {
     @Bindable var viewModel: ProductViewModel
 
     var body: some View {
-        VStack{
-            List(viewModel.sortedProducts) { product in
+        List{
+            HStack {
+                Text("오늘의 상품")
+                    .font(.title)
+                    .bold()
+                Spacer()
+            }
+            .padding(.bottom, 20)
+            .padding(.top, -15)
+            .padding(.leading, -10)
+            
+            ForEach(viewModel.sortedProducts) { product in
                 ProductRow(product: product)
                     .listRowInsets(EdgeInsets())
                     .listRowSeparator(.hidden)
             }
-            .scrollContentBackground(.hidden)
-            .background(Color.white)
         }
+        .scrollContentBackground(.hidden)
+        .background(Color.white)
     }
 }
 

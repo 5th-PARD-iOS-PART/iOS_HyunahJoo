@@ -15,6 +15,9 @@ struct Product: Identifiable {
     let lastPrice: Int
     let category: Category
     let isDeal: Bool
+    let rewardInfo: String
+    let viewerInfo: String
+    let badgeText: String?
 
     enum Category: String, CaseIterable {
         case all, deals, food, clothing, electronics, beauty

@@ -11,13 +11,25 @@ struct In_DealsTab: View {
     @Bindable var viewModel: ProductViewModel
     
     var body: some View{
-        List(viewModel.getDeals()) { product in
-            ProductRow(product: product)
-                .listRowInsets(EdgeInsets())
-                .listRowSeparator(.hidden)
+        List{
+            HStack {
+                Text("특가")
+                    .font(.title)
+                    .bold()
+                Spacer()
+            }
+            .padding(.bottom, 20)
+            .padding(.top, -15)
+            
+            ForEach(viewModel.getDeals()) { product in
+                
+                ProductRow(product: product)
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
+            }
         }
         .scrollContentBackground(.hidden)
-        .background(Color.white) 
+        .background(Color.white)
     }
 }
 

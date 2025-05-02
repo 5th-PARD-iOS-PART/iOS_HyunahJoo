@@ -11,13 +11,24 @@ struct In_FoodTab: View {
     @Bindable var viewModel: ProductViewModel
     
     var body: some View{
-        List(viewModel.getFilteredProducts(for: .food)) { product in
-            ProductRow(product: product)
-                .listRowInsets(EdgeInsets())
-                .listRowSeparator(.hidden)
+        List{
+            HStack {
+                Text("식품")
+                    .font(.title)
+                    .bold()
+                Spacer()
+            }
+            .padding(.bottom, 20)
+            .padding(.top, -15)
+            
+            ForEach(viewModel.getFilteredProducts(for: .food)) { product in
+                ProductRow(product: product)
+                    .listRowInsets(EdgeInsets())
+                    .listRowSeparator(.hidden)
+            }
         }
         .scrollContentBackground(.hidden)
-        .background(Color.white) 
+        .background(Color.white)
     }
 }
 

@@ -20,7 +20,7 @@ struct ProductRow: View {
                     .frame(height: 180)
                     .clipped()
                     .cornerRadius(12)
-                    .padding(.horizontal,15)
+                    .padding(.horizontal,5)
                 
                 VStack(alignment: .leading, spacing: 4) {
                     
@@ -35,14 +35,27 @@ struct ProductRow: View {
                         Text("\(product.lastPrice)원")
                             .font(.subheadline)
                             .foregroundColor(.gray)
-                    }
-                }
+                        
+                        Text(product.rewardInfo)
+                            .font(.caption)
+                            .foregroundColor(.blue)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(Color.blue.opacity(0.1))
+                            .cornerRadius(8)
+                    }//HStack
+
+                    Text(product.viewerInfo)
+                        .font(.caption2)
+                        .foregroundColor(.gray)
+                }//VStack
                 .padding(.top, 4)
-                .padding(.horizontal, 15)
+                .padding(.horizontal, 5)
                 .padding(.bottom, 20)
                 
-            }
-        }
+            }//VStack
+        }//HStack
+        
     }
 }
 
@@ -53,6 +66,9 @@ struct ProductRow: View {
             price: 4900,
             lastPrice: 6900,
             category: .food,
-            isDeal: true
+            isDeal: true,
+            rewardInfo: "토스프라임 390원 적립",
+            viewerInfo: "54.9만명이 구경함·무료배송",
+            badgeText: "최저가보상+"
     ))
 }
